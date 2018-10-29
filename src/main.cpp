@@ -22,18 +22,19 @@ int main() {
 	currentPosition->getDirections();
 
 	do {
-		std::cout << "Choose your path (q to quit): ";
-		std::cin >> direction;
-		if(direction == '0')
-			std::cout << "Invalid choice." << std::endl;
-		else if(direction == 'q')
-			break; 
+        std::cout << "Choose your path (q to quit): ";
+        std::cin >> direction;
+        
+        if(direction == '0')
+            std::cout << "Invalid choice." << std::endl;
+        else if(direction == 'q')
+            break;
         else if(currentPosition->getRoom() == 'L') {
-			std::cout << "Congrats! You solved the maze!";
-			break;
-		}
-		else {
-			currentPosition = currentPosition->moveRoom(direction);
+            std::cout << "Congrats! You solved the maze!";
+            break;
+        }
+        else {
+            currentPosition = currentPosition->moveRoom(direction);
 			std::cout << "You can go " << std::endl;
 			std::cout << "----------" << std::endl;
 			currentPosition->getDirections();
